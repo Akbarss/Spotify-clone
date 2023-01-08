@@ -1,8 +1,8 @@
-.LazyLoad {
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
-
-.is-visible {
-    opacity: 1;
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
 }
