@@ -30,6 +30,6 @@ const wrapPromise = (promise) => {
 }
 
 const fetchPosts = (e) => {
-  return fetch('https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?')
+  return fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res => res.json())
 }
