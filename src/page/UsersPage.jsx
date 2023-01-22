@@ -1,12 +1,14 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 const UsersPage = () => {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Layout>
+        <h1>Hello</h1>
+      </Layout>
+    </>
   );
 };
 
 export default UsersPage;
-<h1>Hello</h1>;

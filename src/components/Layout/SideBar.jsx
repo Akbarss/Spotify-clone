@@ -18,7 +18,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const drawerWidth = 280;
 
@@ -128,7 +128,7 @@ export default function MiniDrawer() {
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose} sx={{ color: "#fff" }}>
+          <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
@@ -168,10 +168,20 @@ export default function MiniDrawer() {
               }}
             >
               <ListItemText>
-                <Link to="/">Home</Link>
+                <NavLink to="/">Home</NavLink>
               </ListItemText>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
               <ListItemText>
-                <Link to="/users">Users</Link>
+                <NavLink to="/users">Users</NavLink>
               </ListItemText>
             </ListItemButton>
           </ListItem>
