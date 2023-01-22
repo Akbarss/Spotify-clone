@@ -10,8 +10,8 @@ const HomePage = () => {
   return (
     <>
       <Layout>
-        <Suspense fallback={<p style={{ color: "#fff", fontSize: "60px" }}>Loading</p>}>
-          <Stack direction={"row"} flexWrap={"wrap"} gap={3} mt={7} justifyContent={"center"}>
+        <Suspense fallback={<p style={{ fontSize: "60px", textAlign: "center" }}>Loading</p>}>
+          <Stack direction={"row"} flexWrap={"wrap"} gap={3} mt={15} justifyContent={"center"}>
             <Posts resource={resource} />
           </Stack>
         </Suspense>
