@@ -4,6 +4,7 @@ import { useResource } from "../api/resource";
 import Posts from "../components/Cards/Posts/Posts";
 import Layout from "../components/Layout";
 import { CircularProgress, Box } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
 let resource = useResource();
 
@@ -24,9 +25,11 @@ const HomePage = () => {
             </Box>
           }
         >
-          <Stack direction={"row"} flexWrap={"wrap"} gap={3} mt={15} justifyContent={"center"}>
-            <Posts resource={resource} />
-          </Stack>
+          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+            <Grid item xs={12}>
+              <Posts resource={resource} />
+            </Grid>
+          </Grid>
         </Suspense>
       </Layout>
     </>
