@@ -10,7 +10,9 @@ const Posts = ({ resource }) => {
         {posts.map((post) => (
           <Grid item xs={2} sm={4} md={4}>
             <Card key={post.id} sx={{ height: 400, width: { xs: "100%", sm: 400 } }}>
-              <Typography textAlign={"center"}>{post.title}</Typography>
+              <Typography textAlign={"center"} variant=" subtitle1">
+                {post.title}
+              </Typography>
             </Card>
           </Grid>
         ))}
