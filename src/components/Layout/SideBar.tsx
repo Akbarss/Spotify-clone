@@ -88,7 +88,6 @@ const SideBar = (props: Props) => {
           <ListItemButton
             sx={{
               minHeight: 48,
-
               px: 2.5,
             }}
           >

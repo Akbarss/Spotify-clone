@@ -1,16 +1,18 @@
 import React from 'react';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
+import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
+import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 
 import { Stack } from '@mui/system';
-import { Badge, Box, IconButton } from '@mui/material';
+import { Badge, Box, Button, IconButton } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 import { drawerWidth } from './SideBar';
+import AccountMenu from './UserNatification';
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -64,29 +66,23 @@ const AdminAppBar = (props: AppBarProps) => {
           justifyContent="space-between"
           width={'100%'}
           marginRight="20px"
+          pt={1}
         >
-          <Typography variant="h6" noWrap component="div">
-            Coursetop
-          </Typography>
-          <Stack direction={'row'} alignItems="center" gap="10px">
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+
+          <Stack direction={'row'} gap={2}>
+            <Box>
+              <KeyboardArrowLeftOutlinedIcon sx={{ fontSize: '33px', cursor: 'pointer' }} />
+            </Box>
+            <Box>
+              <KeyboardArrowRightOutlinedIcon sx={{ fontSize: '33px', cursor: 'pointer' }} />
+            </Box>
+          </Stack>
+
+          <Stack direction={'row'} alignItems="center" gap="1px">
+            <Box display={{ xs: 'none', sm: 'flex' }}>
+              <Button variant="outlined" sx={{ borderRadius: '20px' }}>Сменить тариф</Button>
+            </Box>
+            <AccountMenu />
           </Stack>
         </Box>
       </Toolbar>

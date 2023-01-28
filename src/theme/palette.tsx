@@ -2,9 +2,9 @@ const palette = {
   common: { black: '#000', white: '#fff' },
   primary: {
     lighter: '#ddd',
-    light: '#98C4F9',
-    main: '#67AAF9', // default
-    dark: '#347cd1', // hover color
+    light: '#fff',
+    main: '#fff', // default
+    dark: '#fff', // hover color
     darker: '#2463AD',
     contrastText: '#fff',
   },
