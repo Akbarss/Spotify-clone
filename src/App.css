@@ -1,3 +1,15 @@
 .active {
   color: blue;
+  text-decoration: none;
+}
+
+body {
+    background: #003329;
+    background: linear-gradient(to bottom, #003329 0%, #000000 40%);
+    width: 100%;
+}
+
+.app_bar {
+  backdrop-filter: blur(130px);
+/* background-color: #012820; */
 }

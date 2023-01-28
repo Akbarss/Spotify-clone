@@ -19,17 +19,21 @@ const Layout = (props: Props) => {
     setOpen(false);
   };
   return (
-    <Box display={"flex"}>
-      <CssBaseline />
-      <AppBarSide open={open} handleDrawerOpen={handleDrawerOpen} />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+    <>
+      <Box display={"flex"}>
+        <CssBaseline />
+        <AppBarSide open={open} handleDrawerOpen={handleDrawerOpen} />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+        </Box>
+        <Box width={"100%"} sx={{ marginTop: 12, marginRight: 5 }} minHeight={'100vh'}>
+          {props.children}
+        </Box>
       </Box>
-      <Box width={"100%"} sx={{ marginTop: 12, marginRight: 5 }}>
-        {props.children}
+      <Box position={'fixed'} bottom={2} width='100%' zIndex={90}>
+        <Footer />
       </Box>
-      <Footer />
-    </Box>
+    </>
   );
 };
 

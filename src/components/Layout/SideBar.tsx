@@ -19,7 +19,7 @@ type Props = {
   handleDrawerClose: () => any;
 };
 
-export const drawerWidth = 240;
+export const drawerWidth = 210;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -28,6 +28,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: 'hidden',
+  zIndex: 1,
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
@@ -88,6 +89,7 @@ const SideBar = (props: Props) => {
           <ListItemButton
             sx={{
               minHeight: 48,
+
               px: 2.5,
             }}
           >

@@ -17,7 +17,7 @@ const palette = {
     contrastText: '#fff',
   },
   text: { primary: '#fff', secondary: '#1A1A1A', disabled: '#1A1A1A' },
-  background: { paper: 'rgb(4, 3, 6)  ', default: 'rgb(24, 24, 24)', neutral: '#fff' },
+  background: { paper: 'rgb(4, 3, 6)  ', neutral: '#fff' },
 };
 
 export default palette;

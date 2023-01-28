@@ -7,12 +7,12 @@ import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeft
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 
 import { Stack } from '@mui/system';
-import { Badge, Box, Button, IconButton } from '@mui/material';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Box, Button, IconButton } from '@mui/material';
 
 import { drawerWidth } from './SideBar';
-import AccountMenu from './UserNatification';
+import UserAccountSkeleton from '../Cards/Skeleton/UserAccountSkeleton';
+
+const AccountMenu = React.lazy(() => import('./UserNatification'))
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -47,7 +47,8 @@ const AdminAppBar = (props: AppBarProps) => {
       open={props.open}
       handleDrawerOpen={props.handleDrawerOpen}
     >
-      <Toolbar>
+      <Toolbar className='app_bar'
+      >
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -82,11 +83,13 @@ const AdminAppBar = (props: AppBarProps) => {
             <Box display={{ xs: 'none', sm: 'flex' }}>
               <Button variant="outlined" sx={{ borderRadius: '20px' }}>Сменить тариф</Button>
             </Box>
-            <AccountMenu />
+            <React.Suspense fallback={<UserAccountSkeleton />}>
+              <AccountMenu />
+            </React.Suspense>
           </Stack>
         </Box>
       </Toolbar>
-    </AppBar>
+    </AppBar >
   );
 };
 
