@@ -11,7 +11,6 @@ import {
 import palette from "./palette";
 import typography from "./typography";
 import componentsOverride from "./overrides";
-import shadows, { customShadows } from "./shadows";
 
 // ----------------------------------------------------------------------
 
@@ -22,11 +21,9 @@ ThemeProvider.propTypes = {
 export default function ThemeProvider({ children }) {
   const themeOptions = useMemo(
     () => ({
-      palette,
+      palette: palette,
       shape: { borderRadius: 5 },
       typography,
-      shadows,
-      customShadows,
     }),
     []
   );
