@@ -11,5 +11,5 @@ body {
 
 .app_bar {
   backdrop-filter: blur(130px);
-/* background-color: #012820; */
+background-color: #012820;
 }
