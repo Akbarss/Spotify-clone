@@ -23,11 +23,13 @@ const Layout = (props: Props) => {
       <Box display={"flex"}>
         <CssBaseline />
         <AppBarSide open={open} handleDrawerOpen={handleDrawerOpen} />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component="main" >
           <SideBar open={open} handleDrawerClose={handleDrawerClose} />
         </Box>
-        <Box width={"100%"} sx={{ marginTop: 12, marginRight: 5 }} minHeight={'100vh'}>
-          {props.children}
+        <Box className='contaent-bg' width={'100%'} display='flex' justifyContent={'right'}>
+          <Box width={"100%"} sx={{ marginTop: 12, marginRight: 5, pl: 3 }} minHeight={'100vh'}>
+            {props.children}
+          </Box>
         </Box>
       </Box>
       <Box position={'fixed'} bottom={2} width='100%' zIndex={90}>

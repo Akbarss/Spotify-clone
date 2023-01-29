@@ -7,13 +7,22 @@ import { Box } from "@mui/system";
 import { Stack } from "@mui/material";
 import SongCard from "../components/Cards/Posts/SongCard";
 const Posts = React.lazy(() => import('../components/Cards/Posts/Posts'));
+import { useGetTopChartsQuery } from "../redux/services/shazamCore";
+import Auth from "../components/App/AuthComponent";
 
 let resource = useResource();
 
 const HomePage = () => {
+
   return (
     <>
       <Layout>
+        <Auth />
+        <Stack direction={'column'}>
+          <SkeletonCards />
+          <SkeletonCards />
+          <SkeletonCards />
+        </Stack>
         {/* <Suspense
           fallback={<SkeletonCards />}
         >
@@ -23,15 +32,6 @@ const HomePage = () => {
             </Grid>
           </Grid>
         </Suspense> */}
-        <Stack direction={'column'}>
-          <SkeletonCards />
-          <SkeletonCards />
-          <SkeletonCards />
-        </Stack>
-
-        <Stack direction={'row'} gap={2}>
-          <SongCard />
-        </Stack>
       </Layout>
     </>
   );
