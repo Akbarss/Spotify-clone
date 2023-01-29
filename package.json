@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Akbarss.github.io/Spotify-clone",
   "name": "react-lazy",
   "private": true,
   "version": "0.0.0",
@@ -6,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -32,6 +34,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.0.0",
+    "gh-pages": "^5.0.0",
     "vite": "^4.0.0"
   }
 }
